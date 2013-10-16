@@ -19,17 +19,17 @@ $.fn.fancymetabs = function(params){
 		main.addClass(params.theme); //Adds theme class
 	}
 	if(params.tabheight != "auto"){
-		$("#"+tabberid+".fancyme-tabs > div").css("height", params.tabheight);
+		main.find("> div").css("height", params.tabheight);
 	}
-	$("#"+tabberid+".fancyme-tabs > div").hide();//Hides all tabs content
-	$("#"+tabberid+".fancyme-tabs > div").eq(0).show();//Shows the first tab	
+	main.find("> div").hide();//Hides all tabs content
+	main.find("> div").eq(0).show();//Shows the first tab	
 	//Click event listener for list elements (headers of the tab menu)
-	$("#"+tabberid+".fancyme-tabs > ul li").click(function(){
+	main.find("> ul li").click(function(){
 		$(this).siblings().removeClass("current");
 		$(this).addClass("current");//Adds the identifying class to the selected tab
 		var tab = parseInt($(this).index());//Gets the selected list element's index
-		$("#"+tabberid+".fancyme-tabs > div").hide();//Hides all tabs
-		$("#"+tabberid+".fancyme-tabs > div").eq(tab).show();//Shows the selected tab according to the index obtained
+		main.find("> div").hide();//Hides all tabs
+		main.find("> div").eq(tab).show();//Shows the selected tab according to the index obtained
 	});
 };
 
